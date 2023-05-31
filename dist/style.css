@@ -1,0 +1,54 @@
+body,
+html {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+canvas {
+  /* display: block; */
+  cursor: move;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.hero {
+  z-index: 2;
+  max-width: 800px;
+  height: 100%;
+  position: relative;
+  margin: 42% auto;
+  text-align: center;
+}
+.hero span {
+  padding: 0 5px;
+}
+.hero h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  margin: 0;
+  color: rgb(52, 228, 244);
+  font-weight: 600;
+}
+.hero h2 {
+  text-transform: uppercase;
+  font-size: 28px;
+  margin: 0;
+  color: rgb(246, 232, 38);
+  font-weight: 100;
+}
+.hero p {
+  color: white;
+  background-color: #00000094;
+  max-width: 620px;
+  margin: 20px auto 40px;
+}
+
+button {
+  padding: 10px 20px;
+}
