@@ -2,6 +2,7 @@ body,
 html {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #0f2e45;
 }
 
 canvas {
@@ -9,46 +10,186 @@ canvas {
   cursor: move;
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
+  top: 10%;
+  right: 0;
 }
 
 .hide {
   display: none;
 }
-
 .hero {
   z-index: 2;
-  max-width: 800px;
   height: 100%;
   position: relative;
-  margin: 42% auto;
-  text-align: center;
+  margin: 20% 5%;
+  text-align: left;
 }
 .hero span {
-  padding: 0 5px;
+  padding: 0 15px 0 0;
 }
 .hero h1 {
   font-size: 50px;
   text-transform: uppercase;
   margin: 0;
-  color: rgb(52, 228, 244);
+  color: #59c1bd;
   font-weight: 600;
+  letter-spacing: 3px;
 }
 .hero h2 {
   text-transform: uppercase;
-  font-size: 28px;
+  font-size: 24px;
   margin: 0;
-  color: rgb(246, 232, 38);
+  color: #f7f9f9;
   font-weight: 100;
+  letter-spacing: 4px;
 }
 .hero p {
   color: white;
-  background-color: #00000094;
+  background-color: #00000050;
   max-width: 620px;
-  margin: 20px auto 40px;
+  /* margin: 20px auto 40px; */
+  margin-bottom: 40px;
+  /* text-align: left; */
 }
 
 button {
   padding: 10px 20px;
+  border: white solid 1px;
+  border-radius: 4px;
+  background-color: inherit;
+  color: white;
+  font-size: 18px;
+}
+.cta {
+  color: black;
+  background-color: #00ffee;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 1023px) {
+  .hero {
+    text-align: center;
+    margin-top: 50%;
+  }
+  .hero p {
+    max-width: 100%;
+    margin: 20px auto 40px;
+  }
+}
+
+/* NAVBAR---------------------------------------------------------------------- */
+.links {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: table;
+  margin: 0 auto;
+  /* transform: translateY(-50%); */
+}
+.navbar {
+  min-width: 800px;
+  max-width: 900px;
+}
+nav a {
+  position: relative;
+  width: 19%;
+  display: table-cell;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-weight: bold; */
+  padding: 10px 20px;
+  transition: 0.2s ease color;
+}
+nav button {
+  margin: 5px;
+}
+.ghost {
+  background-color: inherit;
+  border: solid white 1px;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+  height: 50px;
+  margin: 20px 0 10px 30px;
+}
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
+}
+nav a:before {
+  top: 0;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+}
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
+}
+nav a:nth-child(1):before {
+  background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+  background-color: red;
+}
+
+nav a:nth-child(2):before {
+  background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+  background-color: #89ff00;
+}
+
+nav a:nth-child(3):before {
+  background-color: purple;
+}
+
+nav a:nth-child(3):after {
+  background-color: palevioletred;
+}
+
+#indicator {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.2s ease left;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+  background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  left: 34%;
+  background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+  left: 70%;
+  background: linear-gradient(130deg, purple, palevioletred);
 }

@@ -111,7 +111,12 @@ function setupRenderer() {
     antialias: true,
   });
 
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  // renderer.setSize(window.innerWidth, window.innerHeight);
+  const width = Math.ceil(window.innerWidth / 1.3);
+  const height = Math.ceil(window.innerHeight / 1.3);
+  renderer.setSize(width, height);
+  //background color
+  renderer.setClearColor(0x0f2e45, 1);
   document.body.appendChild(renderer.domElement);
 }
 
@@ -129,6 +134,7 @@ function setupCamera() {
 function setupCubes() {
   let geometry = new THREE.BoxGeometry(1, 1, 1);
   cubes = [];
+  //background color
   let color = new THREE.Color(`rgb(128, 128, 128)`);
   for (let x = 0; x < nrOfCubesX; x++) {
     for (let y = 0; y < nrOfCubesY; y++) {
@@ -147,10 +153,12 @@ function setupCubes() {
 
 function setupLights() {
   let ambientLight = new THREE.AmbientLight(0x777777);
+  // let ambientLight = new THREE.AmbientLight(0x111111);
   scene.add(ambientLight);
 
   let spotLight = new THREE.SpotLight(0xbbbbbb);
-  spotLight.position.set(20, 40, 100);
+  // let spotLight = new THREE.SpotLight(0x999999);
+  spotLight.position.set(0, 20, 200);
   spotLight.castShadow = true;
   scene.add(spotLight);
 }
@@ -200,9 +208,11 @@ function setupEventListeners() {
 }
 
 function onWindowResize() {
+  const width = Math.ceil(window.innerWidth / 1.5);
+  const height = Math.ceil(window.innerHeight / 1.5);
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(width, height);
 }
 
 setup();
