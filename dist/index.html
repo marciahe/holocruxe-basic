@@ -3,22 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <title>Holocruxe</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/general_styles.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/features.css" />
+    <link rel="stylesheet" href="./styles/pricing.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
   </head>
   <body>
     <div class="container">
       <div class="navbar">
         <img class="logo" src="../src/holocruxe.png" alt="Holocruxe" />
         <nav class="links">
-          <a href="#">About</a>
-          <a href="#">Features </a>
-          <a href="#">Pricing</a>
+          <a href="#">Home</a>
+          <a href="#features">Features </a>
+          <a href="#pricing">Pricing</a>
           <button class="ghost" href="#">Login</button>
           <button class="" href="#">Create Account</button>
+          <div id="indicator"></div>
         </nav>
-        <div id="indicator"></div>
+        <nav class="mobile">
+          <img class="hamburger" src="../public/menu.png" />
+        </nav>
       </div>
-      <div class="hero-container">
+      <section class="hero-container" id="section1">
         <div class="hero">
           <h2>
             <span>Live </span>
@@ -31,15 +44,53 @@
             labore tenetur, sit reiciendis nesciunt fugit hic modi quam earum
             nisi.
           </p>
-          <button>Secondary</button>
-          <button class="cta">Call to action</button>
+          <button>Know more</button>
+          <button class="cta">Let the magic begin!</button>
         </div>
-      </div>
+      </section>
+
       <div class="canvas-container">
         <canvas id="canvas" class="hide"></canvas>
         <video class="hide" playsinline="true"></video>
         <!-- The playsinline attribute enables the video to play in Safari on iOS 11 -->
       </div>
+
+      <section id="features" class="features">
+        <div class="features-container">
+          <h4>
+            <span>Live </span>
+          </h4>
+          <h3>Embrace the adventure of life</h3>
+          <p>
+            Create unforgettable moments that will leave an indelible mark on
+            the canvas of your future. Let laughter and joy permeate your days,
+            as you craft a collection of incredible memories that will ignite
+            your heart whenever you reflect upon them.
+          </p>
+        </div>
+        <div class="features-container">
+          <h4>
+            <span>Configure </span>
+          </h4>
+          <h3>Take control of your privacy and set the stage</h3>
+          <p>
+            Customize your digital experience by granting permissions, adjusting
+            privacy preferences, and shaping the platform to suit your unique
+            needs and desires.
+          </p>
+        </div>
+      </section>
+
+      <section id="waitlist" class="pricing">
+        <h2>Join our waitlist</h2>
+        <form>
+          <label>Leave your name</label>
+          <input type="text" />
+
+          <label for="">Email</label>
+          <input type="email" />
+        </form>
+      </section>
     </div>
 
     <!-- partial -->
@@ -47,5 +98,6 @@
     <!-- <script src="https://codepen.io/DonKarlssonSan/pen/ZvdZGv.js"></script> -->
     <script src="../src/orbitControls.js"></script>
     <script src="./script.js"></script>
+    <script src="./scroll.js"></script>
   </body>
 </html>
