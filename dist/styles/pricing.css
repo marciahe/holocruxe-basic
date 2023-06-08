@@ -1,4 +1,60 @@
-.pricing {
-  /* background-color: #59c1bd; */
-  min-height: 100vh;
+.waitlist {
+  position: relative;
+  z-index: 2;
+  min-height: 80vh;
+  scroll-snap-align: start;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.waitlist h2 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 40px;
+}
+.join-waitlist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 450px;
+}
+
+.join-waitlist input {
+  /* background-color: #20435e;
+  border: none;
+  border-bottom: 2px solid #fff; */
+  color: #000;
+  font-size: 18px;
+  outline: none;
+  padding: 16px 15px;
+  transition: border-color 0.3s;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.77);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid #c2e6e5;
+}
+
+.join-waitlist input:focus {
+  border-color: #c2e6e5;
+}
+
+.join-waitlist button {
+  background-color: #db5461;
+  border: solid 1px #ff939d;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.join-waitlist button:hover {
+  background-color: #ca4b57;
 }

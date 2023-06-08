@@ -22,7 +22,7 @@
         <nav class="links">
           <a href="#">Home</a>
           <a href="#features">Features </a>
-          <a href="#pricing">Pricing</a>
+          <a href="#waitlist">Waitlist</a>
           <button class="ghost" href="#">Login</button>
           <button class="" href="#">Create Account</button>
           <div id="indicator"></div>
@@ -53,10 +53,16 @@
         <canvas id="canvas" class="hide"></canvas>
         <video class="hide" playsinline="true"></video>
         <!-- The playsinline attribute enables the video to play in Safari on iOS 11 -->
+        <img
+          class="backup hide"
+          src="../public/backup.png"
+          alt="Human and artificial intelligence"
+        />
       </div>
 
       <section id="features" class="features">
         <div class="features-container">
+          <span class="background"></span>
           <h4>
             <span>Live </span>
           </h4>
@@ -68,6 +74,7 @@
             your heart whenever you reflect upon them.
           </p>
         </div>
+
         <div class="features-container">
           <h4>
             <span>Configure </span>
@@ -78,17 +85,28 @@
             privacy preferences, and shaping the platform to suit your unique
             needs and desires.
           </p>
+          <span class="background-2"></span>
         </div>
       </section>
 
-      <section id="waitlist" class="pricing">
-        <h2>Join our waitlist</h2>
-        <form>
-          <label>Leave your name</label>
-          <input type="text" />
-
-          <label for="">Email</label>
-          <input type="email" />
+      <section id="waitlist" class="waitlist">
+        <form class="join-waitlist">
+          <h2>Join our waitlist!</h2>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <button type="submit">Step inside!</button>
         </form>
       </section>
     </div>

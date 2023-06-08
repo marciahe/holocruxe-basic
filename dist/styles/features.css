@@ -2,15 +2,43 @@
   /* background-color: #20435e; */
   position: relative;
   text-align: left;
+  scroll-snap-align: start;
 }
-
+.features .background {
+  background: radial-gradient(
+    circle,
+    rgba(33, 92, 107, 0.6) 0%,
+    rgba(82, 184, 181, 0) 58%,
+    rgba(123, 183, 230, 0) 100%
+  );
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  top: -520px;
+  left: -510px;
+  z-index: -1;
+}
+.features .background-2 {
+  background: radial-gradient(
+    circle,
+    rgba(33, 92, 107, 0.5) 0%,
+    rgba(82, 184, 181, 0) 58%,
+    rgba(123, 183, 230, 0) 100%
+  );
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  bottom: 0;
+  left: 160px;
+  z-index: -1;
+}
 .features-container {
   max-width: 620px;
   z-index: 2;
-  min-height: 80vh;
+  min-height: 60vh;
   position: relative;
   left: 10%;
-  transform: translateY(50%);
+  transform: translateY(30%);
   text-align: left;
   color: white;
 }

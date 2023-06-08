@@ -10,6 +10,20 @@ html {
   );
   scroll-behavior: smooth;
 }
+.container {
+  scroll-snap-type: y proximity;
+}
+.canvas-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.backup {
+  right: 20%;
+  top: 30%;
+  position: fixed;
+  scale: 1.8;
+}
 canvas {
   position: fixed;
   z-index: 0;
@@ -19,6 +33,7 @@ canvas {
 .hide {
   display: none;
 }
+
 .hero-container {
   min-height: 80vh;
 }
@@ -40,7 +55,7 @@ canvas {
   font-weight: 800;
   letter-spacing: 3px;
   background: #59c1bd;
-  /* background: linear-gradient(to right, #59c1bd 0%, #c2e6e5 58%); */
+  background: linear-gradient(to right, #59c1bd 0%, #c2e6e5 58%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -55,18 +70,18 @@ canvas {
 }
 .hero p {
   color: white;
-  /* background-color: #00000050; */
+  background-color: #00000050;
   max-width: 620px;
-  /* margin: 20px auto 40px; */
+  margin: 20px auto 40px;
   margin-bottom: 40px;
-  /* text-align: left; */
+  text-align: left;
 }
 p {
   font-size: 18px;
 }
 button {
   font-family: "Inter", sans-serif;
-  padding: 10px 20px;
+  padding: 14px 25px;
   border: white solid 1px;
   border-radius: 4px;
   background-color: inherit;
