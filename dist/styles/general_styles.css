@@ -27,7 +27,7 @@ html {
 canvas {
   position: fixed;
   z-index: 0;
-  top: 14%;
+  top: 20%;
   right: -100px;
 }
 .hide {
