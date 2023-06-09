@@ -122,9 +122,9 @@ function setupCamera() {
   camera = new THREE.PerspectiveCamera(75, res, 0.1, 1000);
   camera.position.set(nrOfCubesX / 2, nrOfCubesY / 2, z);
 
-  // let controls = new THREE.OrbitControls(camera);
-  // controls.target.set(nrOfCubesX / 2, nrOfCubesY / 2, 0);
-  // controls.update();
+  let controls = new THREE.OrbitControls(camera);
+  controls.target.set(nrOfCubesX / 2, nrOfCubesY / 2, 0);
+  controls.update();
 }
 
 function setupCubes() {
