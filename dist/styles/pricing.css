@@ -5,8 +5,10 @@
   scroll-snap-align: start;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  left: 10%;
+  bottom: 80px;
 }
 .waitlist h2 {
   color: #fff;
@@ -24,19 +26,22 @@
   /* background-color: #20435e;
   border: none;
   border-bottom: 2px solid #fff; */
-  color: #000;
+  color: #fff;
   font-size: 18px;
   outline: none;
   padding: 16px 15px;
   transition: border-color 0.3s;
 
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.77);
+  background: rgba(133, 145, 145, 0.77);
   border-radius: 8px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   border: 1px solid #c2e6e5;
+}
+.join-waitlist input::placeholder {
+  color: white;
 }
 
 .join-waitlist input:focus {
@@ -44,10 +49,9 @@
 }
 
 .join-waitlist button {
-  background-color: #db5461;
-  border: solid 1px #ff939d;
+  color: black;
+  background-color: #c2e6e5;
   border-radius: 8px;
-  color: #ffffff;
   cursor: pointer;
   font-size: 20px;
   padding: 16px;
@@ -56,5 +60,5 @@
 }
 
 .join-waitlist button:hover {
-  background-color: #ca4b57;
+  background-color: #9ae2e0;
 }
