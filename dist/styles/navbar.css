@@ -134,4 +134,7 @@ nav a:nth-child(3):hover ~ #indicator {
   .mobile {
     display: flex;
   }
+  .navbar {
+    max-width: 80%;
+  }
 }
