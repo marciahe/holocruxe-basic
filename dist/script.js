@@ -10,7 +10,7 @@ let canvas;
 let ctx;
 let w;
 let h;
-let size = 8;
+let size = 6;
 let video;
 
 // three.js stuff
@@ -122,41 +122,10 @@ function setupCamera() {
   camera = new THREE.PerspectiveCamera(75, res, 0.1, 1000);
   camera.position.set(nrOfCubesX / 2, nrOfCubesY / 2, z);
 
-  let controls = new THREE.OrbitControls(camera);
-  controls.target.set(nrOfCubesX / 2, nrOfCubesY / 2, 0);
-  controls.update();
+  // let controls = new THREE.OrbitControls(camera);
+  // controls.target.set(nrOfCubesX / 2, nrOfCubesY / 2, 0);
+  // controls.update();
 }
-
-// function setupCamera() {
-//   let res = window.innerWidth / window.innerHeight;
-//   let z = (1 / size) * 500;
-//   camera = new THREE.PerspectiveCamera(75, res, 0.1, 1000);
-//   camera.position.set(nrOfCubesX / 2, nrOfCubesY / 2, z);
-
-//   // Obtener la posición de la sección "#pricing"
-//   var pricingSection = document.getElementById("pricing");
-//   var pricingSectionPosition = pricingSection.getBoundingClientRect().top;
-
-//   // Verificar si se ha hecho scroll a la sección "#pricing"
-//   if (pricingSectionPosition < window.innerHeight) {
-//     // Cambiar el tamaño de los cubos a más pequeño
-//     cubes.forEach((cube) => {
-//       cube.scale.x = cube.scale.y = 0.8;
-//     });
-//   } else {
-//     // Restaurar el tamaño de los cubos al estado original
-//     cubes.forEach((cube) => {
-//       cube.scale.x = cube.scale.y = 1;
-//     });
-//     // camera.position.set(nrOfCubesX / 2, nrOfCubesY / 2, z);
-
-//     console.log("2");
-//   }
-
-//   let controls = new THREE.OrbitControls(camera);
-//   controls.target.set(nrOfCubesX / 2, nrOfCubesY / 2, 0);
-//   controls.update();
-// }
 
 function setupCubes() {
   let geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -197,35 +166,6 @@ function draw() {
   renderer.render(scene, camera);
 }
 
-// function draw() {
-//   requestAnimationFrame(draw);
-
-//   // Obtener la posición de la sección "#pricing"
-//   var pricingSection = document.getElementById("pricing");
-//   var pricingSectionPosition = pricingSection.getBoundingClientRect().top;
-
-//   // Verificar si se ha hecho scroll a la sección "#pricing"
-//   if (pricingSectionPosition < window.innerHeight) {
-//     // Cambiar el tamaño de los cubos a más pequeño
-//     cubes.forEach((cube) => {
-//       cube.scale.x = cube.scale.y = 0.8;
-//     });
-//   } else {
-//     // Restaurar el tamaño de los cubos al estado original
-//     cubes.forEach((cube) => {
-//       cube.scale.x = cube.scale.y = 1;
-//     });
-//     // camera.position.set(nrOfCubesX / 2, nrOfCubesY / 2, z);
-
-//     console.log("2");
-//   }
-
-//   // Actualizar y renderizar la escena
-//   ctx.drawImage(video, 0, 0, w, h);
-//   pixelate();
-//   renderer.render(scene, camera);
-// }
-
 function pixelate() {
   let imageData = ctx.getImageData(0, 0, w, h);
   let pixels = imageData.data;
@@ -261,6 +201,7 @@ function getAverage(pixels, x0, y0) {
 
 function setupEventListeners() {
   window.addEventListener("resize", onWindowResize);
+  window.addEventListener("scroll", onScroll);
 }
 
 function onWindowResize() {
@@ -269,6 +210,32 @@ function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
+}
+
+let originalCubeSize = 1;
+
+function onScroll() {
+  let scrollPosition = window.scrollY;
+  let newCubeSize = originalCubeSize + scrollPosition / 1000;
+
+  cubes.forEach((cube) => {
+    cube.scale.set(newCubeSize, newCubeSize, newCubeSize);
+  });
+}
+
+function onWindowResize() {
+  const width = Math.ceil(window.innerWidth / 1.5);
+  const height = Math.ceil(window.innerHeight / 1.5);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+
+  // Reset cube size if scroll position is back at top
+  if (window.scrollY === 0) {
+    cubes.forEach((cube) => {
+      cube.scale.set(originalCubeSize, originalCubeSize, originalCubeSize);
+    });
+  }
 }
 
 setup();
