@@ -60,3 +60,9 @@
   font-weight: 800;
   letter-spacing: 1px;
 }
+
+@media screen and (max-width: 1023px) {
+  .features .background-2 {
+    display: none;
+  }
+}
