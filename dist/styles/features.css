@@ -61,7 +61,12 @@
   font-weight: 800;
   letter-spacing: 1px;
 }
-
+.configure {
+  margin-top: 300px;
+}
+.features img {
+  margin-top: 30px;
+}
 .vertical-line-1 {
   position: absolute;
   top: 0px;
@@ -72,7 +77,7 @@
   /* background: white; */
   background: linear-gradient(to bottom, #20435e, #fff 50%);
   background-size: 100% 200%;
-  /* animation: gradient2 2s infinite linear; */
+  /* animation: gradient2 3s infinite linear; */
 }
 @keyframes gradient2 {
   0% {

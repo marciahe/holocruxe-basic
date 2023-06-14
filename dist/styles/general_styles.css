@@ -113,6 +113,7 @@ button {
 @media screen and (max-width: 1023px) {
   .hero {
     text-align: center;
+    margin-top: 80px;
     bottom: 80px;
     transform: none;
     left: 0;
