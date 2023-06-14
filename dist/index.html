@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/navbar.css" />
     <link rel="stylesheet" href="./styles/features.css" />
     <link rel="stylesheet" href="./styles/pricing.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,16 +21,12 @@
     <div class="container">
       <div class="navbar">
         <!-- Descomentar esta imagen en local y comentar la siguiente ------------------------------->
+        <img class="logo" src="../public/holocruxe.png" alt="Holocruxe" />
         <!-- <img
-          class="logo"
-          src="../public/holocruxe.png"
-          alt="Holocruxe"
-        /> -->
-        <img
           class="logo"
           src="https://i.imgur.com/FFm2Ypb.png"
           alt="Holocruxe"
-        />
+        /> -->
         <nav class="links">
           <a href="#">Home</a>
           <a href="#features">Features </a>
@@ -64,19 +61,20 @@
         </div>
       </section>
 
-      <div class="canvas-container">
+      <!-- <div class="canvas-container">
         <canvas id="canvas" class="hide"></canvas>
         <video class="hide" playsinline="true"></video>
-        <!-- The playsinline attribute enables the video to play in Safari on iOS 11 -->
         <img
           class="backup hide"
           src="https://i.imgur.com/IAMXqZx.png"
           src="../public/backup.png"
           alt="Human and artificial intelligence"
         />
-      </div>
+      </div> -->
 
       <section id="features" class="features">
+        <div class="vertical-line-1"></div>
+
         <div class="features-container">
           <span class="background"></span>
           <h4>
@@ -92,6 +90,8 @@
         </div>
 
         <div class="features-container">
+          <div class="vertical-line-2"></div>
+
           <h4>
             <span>Configure </span>
           </h4>
@@ -127,10 +127,33 @@
       </section>
     </div>
 
+    <footer class="footer-distributed">
+      <div class="footer-right">
+        <a href="#"><img src="../public/instagram.png" /></a>
+        <a href="#"><img src="../public/facebook.png" /></a>
+        <a href="#"><img src="../public/twitter.png" /></a>
+        <a href="#"><img src="../public/linkedin.png" /></a>
+      </div>
+
+      <div class="footer-left">
+        <p class="footer-links">
+          <a class="link-1" href="#">Home</a>
+
+          <a href="#">Blog</a>
+
+          <a href="#">FAQ</a>
+
+          <a href="#">Join the team</a>
+        </p>
+
+        <p>Holocruxe &copy; 2023</p>
+      </div>
+    </footer>
+    <!-- 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js"></script>
     <script src="./scripts/orbitControls.js"></script>
 
     <script src="./scripts/main.js"></script>
-    <script src="./scripts/camera-permissions.js"></script>
+    <script src="./scripts/camera-permissions.js"></script> -->
   </body>
 </html>

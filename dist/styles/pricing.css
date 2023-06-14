@@ -5,9 +5,8 @@
   scroll-snap-align: start;
   text-align: center;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
-  left: 10%;
   bottom: 80px;
 }
 .waitlist h2 {

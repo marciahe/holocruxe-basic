@@ -39,30 +39,42 @@ canvas {
 }
 .hero {
   z-index: 2;
-  position: absolute;
-  left: 10%;
-  transform: translateY(100%);
+  transform: translateY(50%);
   text-align: left;
+  text-align: center;
+  margin: 0 auto;
 }
 .hero span {
   padding: 0 15px 0 0;
 }
 .hero h1 {
-  font-size: 60px;
+  font-size: 90px;
   text-transform: uppercase;
   margin: 0;
-  color: #59c1bd;
+  /* color: #59c1bd; */
   font-weight: 800;
   letter-spacing: 3px;
-  background: #59c1bd;
-  background: linear-gradient(to right, #59c1bd 0%, #c2e6e5 58%);
+  /* background: #59c1bd; */
+  /* background: linear-gradient(to right, #59c1bd 50%, #c2e6e5 50%); */
+  background: linear-gradient(to right, #59c1bd, #c2e6e5, #59c1bd);
+  background-size: 200% 100%;
+  color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradient 2s infinite linear;
+}
+@keyframes gradient {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
 }
 .hero h2 {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 50px;
   margin: 0;
   color: #f7f9f9;
   font-weight: 100;
@@ -70,11 +82,10 @@ canvas {
 }
 .hero p {
   color: white;
-  background-color: #00000050;
   max-width: 620px;
   margin: 20px auto 40px;
   margin-bottom: 40px;
-  text-align: left;
+  text-align: center;
 }
 p {
   font-size: 18px;
@@ -83,7 +94,7 @@ button {
   font-family: "Inter", sans-serif;
   padding: 14px 25px;
   border: white solid 1px;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: inherit;
   color: white;
   font-size: 16px;
@@ -96,6 +107,7 @@ button {
   font-weight: 800;
   color: black;
   background-color: #c2e6e5;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 1023px) {
